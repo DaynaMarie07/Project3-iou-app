@@ -46,7 +46,7 @@
             -->
             <div class="content">
                 <div class="title m-b-md">
-                      Daynas IOU APP2
+                      IOU APP
                 </div>
 
                 <div class="links">
