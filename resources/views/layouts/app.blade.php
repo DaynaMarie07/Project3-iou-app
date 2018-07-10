@@ -76,6 +76,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <script src="{{ elixir('js/app.js') }}"></script>
     </div>
 </body>
 </html>
