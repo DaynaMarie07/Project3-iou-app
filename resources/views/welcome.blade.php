@@ -1,38 +1,10 @@
 @extends('layouts.app')
 
-@section('title', ' my IOU App')
-
-@section('pageStyles')
-<style>
-.content {
-  text-align: center;
-}
-
-.title {
-  font-size: 84px;
-}
-
-.links > a {
-  color: #636b6f;
-  padding: 0 25px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: .1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.m-b-md {
-  margin-bottom: 30px;
-}
-
-</style>
-@endsection
+@section('title', 'IOU App')
 
 @section('content')
 
 <div class="flex-center position-ref full-height">
-            
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -43,10 +15,10 @@
                     @endauth
                 </div>
             @endif
-           
+
             <div class="content">
                 <div class="title m-b-md">
-                      IOU APP
+                    IOU APP
                 </div>
 
                 <div class="links">
