@@ -12,7 +12,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <title>IOU</title> 
+    <title>Send and Request</title> 
     
     <div class="pos-f-t">
                 <div class="collapse" id="navbarToggleExternalContent">
@@ -34,16 +34,34 @@
                   <img src="../images/iou1" alt="" style="width:120px;height:60px;" >
                 </nav>
               </div>
-</head>
-<body>
-    <header>
-        @yield('header')
-    </header>   
-    <main class = "container">
-        @yield('content')
-    </main>
-    <footer>
-        @yield('footer')
-    </footer>
-</body>
-</html>
+</head> <body>
+        <div class="form-row">
+          <div class="col">
+              <img src="https://aicaonline.org/wp-content/uploads/2014/08/unknownMale-469x469.jpg" class="rounded float-left" alt="unknown" width=20% >
+          </div>
+        </div>
+   
+      <form>
+          <div class="form-row">
+              <input type="text" class="form-control" placeholder="Contact Name">
+            </div>
+            <div class="form-row-2">
+                <input type="text" class="form-control" placeholder="Comment">
+            </div>
+            <div class="form-row-3">
+                <select class="form-control">
+                    <option>IOU</option>
+                    <option>UOME</option>
+                  </select>
+            </div>
+            <div class="form-row-4">
+                <input type="input" class="form-control" placeholder="$">
+            </div>
+          </div>
+        </form>
+  
+  
+        <script type="application/javascript" src="/public/assets/js/script.js"></script>
+  
+  </body>
+  </html>
