@@ -13,7 +13,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <title>IOU</title> 
+    <title>Welcome!</title> 
 
     <style> @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
             * {

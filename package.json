@@ -20,6 +20,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "dotenv": "^6.0.0"
+        "dotenv": "^6.0.0",
+        "webpack": "^4.16.0"
     }
 }
