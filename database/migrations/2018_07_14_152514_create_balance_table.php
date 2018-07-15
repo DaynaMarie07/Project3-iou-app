@@ -16,10 +16,10 @@ class CreateBalanceTable extends Migration
         Schema::create('balance', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->number('balance');
-            $table->number('new transaction');
+            $table->integer('balance');
+            $table->integer('new transaction');
             $table->string('location');
-            $table->textarea('info');
+            $table->text('info');
             $table->timestamps();
         });
     }
