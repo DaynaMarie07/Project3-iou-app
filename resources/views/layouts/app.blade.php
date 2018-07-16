@@ -12,37 +12,43 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <title>IOU</title> 
-    
-    <div class="pos-f-t">
-                <div class="collapse" id="navbarToggleExternalContent">
-                    
-                  <div class="bg-dark p-4 ">
-                    <h4 class="text-white">Collapsed content</h4>
-                    <span class="text-muted">Welcome to the best IOU app out there.</span>
-                       <ul>
-                           <li>About</li>
-                           <li>Login</li>
-                           <li>Profile</li>
-                       </ul>
-                    </div>
-                </div>
-                <nav class="navbar navbar-dark bg-dark">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <img src="../images/iou1" alt="" style="width:120px;height:60px;" >
-                </nav>
-              </div>
+    <title>IOU</title>
+    <!-- put template styles here or in css file -->
+        <!-- Whole site styles -->
+    <!-- --------------------------------------- -->
+
+    <!-- page specific styles will be included here, by -->
+    @yield('pagestyles')
 </head>
 <body>
     <header>
+        <div id="template-header" class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4 ">
+                    <h4 class="text-white">Collapsed content</h4>
+                    <span class="text-muted">Welcome to the best IOU app out there.</span>
+                    <ul>
+                        <li>About</li>
+                        <li>Login</li>
+                        <li>Profile</li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <img src="../images/iou1" alt="" style="width:120px;height:60px;" >
+            </nav>
+        </div> 
         @yield('header')
     </header>   
     <main class = "container">
         @yield('content')
     </main>
     <footer>
+        <div id="template-footer">
+        </div>
         @yield('footer')
     </footer>
 </body>
