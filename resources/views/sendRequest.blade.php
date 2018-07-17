@@ -1,4 +1,4 @@
-@extends('layouts.contact')
+@extends('layouts.sendRequest')
 @section('pagestyles')
 <style>@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
@@ -134,20 +134,18 @@ ul.c-controls li a:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 60%;
     
 }
 </style>
 @endsection
 @section('content')
-<body> 
-    <div class ="img"> 
 
+    <div class ="img"> 
           <div class="col">
-              <img src="https://aicaonline.org/wp-content/uploads/2014/08/unknownMale-469x469.jpg" class="img" alt="unknown" width=20% >
+              <img src="/img/johndoe.jpg" class="img" alt="unknown" width=20% >
           </div>
         </div>
-   
     <form>
        <div class = "input">
             <div class="form-row-3">

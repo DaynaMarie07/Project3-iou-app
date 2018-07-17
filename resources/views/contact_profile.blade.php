@@ -277,7 +277,6 @@
 
 .card.hovercard .info .desc {
     overflow: hidden;
-    
     line-height: px;
     color: #737373;
     text-overflow: ellipsis;
@@ -306,6 +305,8 @@
  th, td {
     padding: 15px;
     text-align: left;
+    font-size: 15px;
+    color: #210E2B; 
 }
  /* .btn::before{
    position:absolute;
@@ -397,7 +398,7 @@
                     <td>03.05.18</td>
                   </tr>
                   <tr>
-                    <th scope="row">OWED</th>
+                    <th scope="row">OWE</th>
                     <td>Climax</td>
                     <td>$30.00</td>
                     <td>05.07.18</td>
@@ -409,13 +410,13 @@
                       <td>01.02.18</td>
                     </tr>
                     <tr>
-                      <th scope="row">OWED</th>
+                      <th scope="row">OWE</th>
                       <td>Starbucks</td>
                       <td>-$10</td>
                       <td>03.05.18</td>
                     </tr>
                     <tr>
-                      <th scope="row">OWED</th>
+                      <th scope="row">OWE</th>
                       <td>Climax</td>
                       <td>$30.00</td>
                       <td>05.07.18</td>
