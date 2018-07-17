@@ -1,4 +1,4 @@
-@extends('layouts.contact')
+@extends('layouts.app')
 
 @section('pagestyles')
 <style>@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
