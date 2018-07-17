@@ -21,6 +21,12 @@ Route::get('/login', function () {
 Route::get('/profile', function () {
     return view('contact_profile');
 });
+Route::get('/contacts', function () {
+    return view('contactsall');
+});
+Route::get('/sendRequest', function () {
+    return view('sendRequest');
+});
 
 
 Auth::routes();

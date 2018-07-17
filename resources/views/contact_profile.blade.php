@@ -303,6 +303,10 @@
 
  
  }
+ th, td {
+    padding: 15px;
+    text-align: left;
+}
  /* .btn::before{
    position:absolute;
    top: 10px;
@@ -370,11 +374,10 @@
         </div>
         <div class="col">
             <div class="table-responsive">
-              <table class="table table-striped table-dark">
+              <table class="th td">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
                     <th scope="col">Comment</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Date</th>
@@ -383,49 +386,42 @@
                 <tbody>
                   <tr>
                     <th scope="row">PAID</th>
-                    <td>Becca</td>
                     <td>Golden Corral</td>
                     <td>-$25.00</td>
                     <td>01.02.18</td>
                   </tr>
                   <tr>
                     <th scope="row">PAID</th>
-                    <td>Christa</td>
                     <td>Starbucks</td>
                     <td>-$10</td>
                     <td>03.05.18</td>
                   </tr>
                   <tr>
                     <th scope="row">OWED</th>
-                    <td>Patrick</td>
                     <td>Climax</td>
                     <td>$30.00</td>
                     <td>05.07.18</td>
                   </tr>
                   <tr>
                       <th scope="row">PAID</th>
-                      <td>Nikki</td>
                       <td>Golden Corral</td>
                       <td>-$25.00</td>
                       <td>01.02.18</td>
                     </tr>
                     <tr>
                       <th scope="row">OWED</th>
-                      <td>Laya</td>
                       <td>Starbucks</td>
                       <td>-$10</td>
                       <td>03.05.18</td>
                     </tr>
                     <tr>
                       <th scope="row">OWED</th>
-                      <td>Nemo</td>
                       <td>Climax</td>
                       <td>$30.00</td>
                       <td>05.07.18</td>
                     </tr>
                   <tr>
                       <th scope="row">PAID</th>
-                      <td>Ella</td>
                       <td>EarthBound</td>
                       <td>$30.00</td>
                       <td>05.07.18</td>
