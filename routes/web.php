@@ -24,6 +24,9 @@ Route::get('/profile', function () {
 Route::get('/contacts', function () {
     return view('contactsall');
 });
+Route::get('/sendRequest', function () {
+    return view('sendRequest');
+});
 
 
 Auth::routes();

@@ -303,6 +303,10 @@
 
  
  }
+ th, td {
+    padding: 15px;
+    text-align: left;
+}
  /* .btn::before{
    position:absolute;
    top: 10px;
@@ -370,7 +374,7 @@
         </div>
         <div class="col">
             <div class="table-responsive">
-              <table class="table table-striped table-dark">
+              <table class="th td">
                 <thead>
                   <tr>
                     <th scope="col">#</th>

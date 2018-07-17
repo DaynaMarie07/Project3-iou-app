@@ -5,6 +5,7 @@
 
 body {
     padding: 0px 0px 60px;
+ 
 }
 body:after {
             content:"";
@@ -96,9 +97,6 @@ ul.c-controls li a:hover {
     background-color: rgba(51, 51, 51, 0.2);
 }
 
-.c-toggle {
-    font-size: 1.7em;
-}
 
 .name {
     font-size: 1.7em;
@@ -109,6 +107,11 @@ ul.c-controls li a:hover {
     padding: 5px 10px;
     font-size: 1.25em;
 }
+/* .img{
+    border-radius: 50%;
+     width:32px; 
+     height:32px; line-height:18px; 
+} */
 </style>
 @endsection
 @section('js')
@@ -121,7 +124,6 @@ $(function () {
     }
     
     
-    $('[data-toggle="tooltip"]').tooltip();
     
     $('#fullscreen').on('click', function(event) {
         event.preventDefault();
@@ -165,10 +167,7 @@ $(function () {
             <div class="panel panel-default">
                 <div class="panel-heading c-list">
                     <span class="title">Contacts</span>
-                    <ul class="pull-right c-controls">
-                        <li><a href="#cant-do-all-the-work-for-you" data-toggle="tooltip" data-placement="top" title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
-                        <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a></li>
-                    </ul>
+                   
                 </div>
                 
                 <div class="row" style="display: none;">
@@ -184,11 +183,13 @@ $(function () {
                 
                 <ul class="list-group" id="contact-list">
                     <li class="list-group-item">
-                        <div class="col-xs-12 col-sm-3">
+                        <!-- <div class ="img"> -->
+                         <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
-                        </div>
+                         </div>
+                        <!-- </div> -->
                         <div class="col-xs-12 col-sm-9">
-                            <span class="name">Scott Stevens</span><br/>
+                            <span class="name">John Doe</span><br/>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
                             <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span>
