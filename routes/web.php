@@ -27,6 +27,10 @@ Route::get('/contacts', function () {
 Route::get('/sendRequest', function () {
     return view('sendRequest');
 });
+Route::get('/login', function () {
+    return view('login');
+});
+
 
 
 Auth::routes();

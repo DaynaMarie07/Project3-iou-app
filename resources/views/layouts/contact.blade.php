@@ -12,7 +12,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <title>Contact</title>
+    <title>Contact Profile</title>
     <!-- put template styles here or in css file -->
         <!-- Whole site styles -->
     <!-- --------------------------------------- -->
