@@ -183,7 +183,7 @@ ul.c-controls li a:hover {
 <div class="input[type=text]">
   <label for="example-search-input" class="col-2 col-form-label">To:</label>
   <div class="col-10">
-    <input class="form-control" type="search" value="Jane Doe" id="example-search-input">
+    <input class="form-control" type="search" placeholder="Jane Doe" id="example-search-input">
   </div>
 </div>
 
@@ -192,7 +192,7 @@ ul.c-controls li a:hover {
   <div class="col-10">
       <br>
       
-    <input class="form-control" type="text" value="i owe you $20 for food" id="example-text-input">
+    <input class="form-control" type="text" placeholder="i owe you $20 for food" id="example-text-input">
   </div>
 </div>
 </br>
@@ -200,7 +200,7 @@ ul.c-controls li a:hover {
   <label for="example-email-input" class="col-2 col-form-label">Email</label>
   <div class="col-10">
   <br>
-    <input class="form-control" type="email" value="janeDoe@example.com" id="example-email-input">
+    <input class="form-control" type="email" placeholder="janeDoe@example.com" id="example-email-input">
   </div>
 </div>
 </br>
@@ -208,7 +208,7 @@ ul.c-controls li a:hover {
   <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
   <div class="col-10">
   <br>
-    <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input">
   </div>
 </div>
 </br>
@@ -216,7 +216,7 @@ ul.c-controls li a:hover {
   <label for="example-number-input" class="col-2 col-form-label">Amount</label>
   <div class="col-10">
   <br>
-    <input class="form-control" type="number" value="20.00" id="example-number-input">
+    <input class="form-control" type="number" placeholder="$20.00" id="example-number-input">
   </div>
 </div>
 </br>
