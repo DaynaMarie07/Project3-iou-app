@@ -38,7 +38,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <img src="./img/iou1.jpg" alt="" style="width:120px;height:60px;" >
+                <img src="../img/iou1.jpg" alt="" style="width:120px;height:60px;" >
             </nav>
         </div> 
         @yield('header')

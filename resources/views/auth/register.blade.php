@@ -119,7 +119,7 @@
               cursor: pointer;
               width: 100%;
               border: none;
-              background: #268C8A;
+              background:  #17a2b8;
               color: #FFF;
               margin: 0 0 5px;
               padding: 10px;
@@ -189,7 +189,7 @@
         <fieldset>
             <button  type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
         </fieldset>
-        <p class="copyright">Customized by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
+        <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
         </form>
   </div>
 @endsection

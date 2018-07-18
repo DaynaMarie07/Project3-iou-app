@@ -191,7 +191,7 @@
         <fieldset>
             <button  type="submit" id="contact-submit" data-submit="...Sending">Not a member? Sign up for free now!</button>
         </fieldset>
-        <p class="copyright">Customized by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
+        <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
         </form>
   </div>
 @endsection

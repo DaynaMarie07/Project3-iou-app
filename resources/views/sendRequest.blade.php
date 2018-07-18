@@ -209,7 +209,7 @@
         </fieldset> <fieldset>
             <button  type="submit" class="contact-submit" data-submit="...Sending">Request</button>
         </fieldset>
-        <p class="copyright">Customized by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
+        <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
         </form>
   </div>
 @endsection

@@ -42,7 +42,7 @@
             }
             
             .container {
-              max-width: 400px;
+              max-width: 700px;
               width: 100%;
               margin: 0 auto;
               position: relative;
@@ -65,112 +65,114 @@
                 width:87px; 
                 height:80px; 
                 line-height:10px;
-                font-size: 15px; 
+                font-size: 1.2rem; 
                 margin: 10px;
                 margin-bottom: 17px; 
 
                 
                 }
-                th, td {
-                    padding: 15px;
-                    text-align: left;
+                .table-mycolor {
+                background-color: rgba(255,255,255,0.1) !important;
+                color: #000;
                 }
            
                     </style>
 @section('content')
-       
-       <div class = "container">
-           <table class="table table-bordered table-dark">
-             <thead class="thead-light">
-                  
-       </div>    
-     
-       <div id="wrapper">
-        <div class="scroll">
-          <div class="my-custom-btn">
-          <button type="button" class="my-custom-btn btn-lg active" role="button" aria-pressed="true"> {{ __('Send') }}</button>
-            <button type="button" class="my-custom-btn btn-lg active" role="button" aria-pressed="true"> {{ __('Request') }}</button>
-            <button type="button" class="my-custom-btn btn-lg active" role="button" aria-pressed="true" > {{ __('Contact') }}</button>
-          </div>
-        </div>
-        <div class="col">
-            <div class="table-responsive">
-              <table class="th td">
-              <tr>
-                       <th scope="row">IOU</th>
-                       <td>Amy</td>
-                       <td>Olive Garden</td>
-                       <td>-$25.00</td>
-                       <td>01.02.2018</td>
-                   </tr>
-                   <tr>
-                       <th scope="row">IOU</th>
-                       <td>Kaitlyn</td>
-                       <td>Starbucks</td>
-                       <td>-$10</td>
-                       <td>03.05.2018</td>
-                   </tr>
-                   <tr>
-                       <th scope="row">UOME</th>
-                       <td>Julie</td>
-                       <td>Outback</td>
-                       <td>$30.00</td>
-                       <td>05.07.2018</td>
-                   </tr>
-                <tbody>
-                  <tr>
-                    <th scope="row">IO</th>
-                    <td>Jane</td>
-                    <td>Golden Corral</td>
-                    <td>-$25.00</td>
-                    <td>01.02.18</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">IO</th>
-                    <td>John</td>
-                    <td>Starbucks</td>
-                    <td>-$10</td>
-                    <td>03.05.18</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">OWED</th>
-                    <td>Matt</td>
-                    <td>Climax</td>
-                    <td>$30.00</td>
-                    <td>05.07.18</td>
-                  </tr>
-                  <tr>
-                      <th scope="row">IO</th>
-                      <td>Amelia</td>
-                      <td>Golden Corral</td>
-                      <td>-$25.00</td>
-                      <td>01.02.18</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">OWED</th>
-                      <td>Amy</td>
-                      <td>Starbucks</td>
-                      <td>-$10</td>
-                      <td>03.05.18</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">OWED</th>
-                      <td>Chase</td>
-                      <td>Climax</td>
-                      <td>$30.00</td>
-                      <td>05.07.18</td>
-                    </tr>
-                  <tr>
-                      <th scope="row">IO</th>
-                      <td>Alex</td>
-                      <td>EarthBound</td>
-                      <td>$30.00</td>
-                      <td>05.07.18</td>
-                    </tr>
-                </tbody>
-              </table>
-              <!--container div-->
-            </div>
+
+<div class = "container">
+  <div id="wrapper">
+    <div class="scroll">
+      <div class="d-flex justify-content-center">
+        <button type="button" class="my-custom-btn active" role="button" aria-pressed="true"> {{ __('Send') }}</button>
+        <button type="button" class="my-custom-btn active" role="button" aria-pressed="true"> {{ __('Request') }}</button>
+        <button type="button" class="my-custom-btn active" role="button" aria-pressed="true" > {{ __('Contact') }}</button>
+      </div>
+    </div>
+  </div>
+  <table class="table-mycolor table table-bordered ">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Owes</th>
+        <th scope="col">First</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">IOU</th>
+        <td>Amy</td>
+        <td>Olive Garden</td>
+        <td>-$25.00</td>
+        <td>01.02.2018</td>
+      </tr>
+      <tr>
+        <th scope="row">IOU</th>
+        <td>Kaitlyn</td>
+        <td>Starbucks</td>
+        <td>-$10</td>
+        <td>03.05.2018</td>
+      </tr>
+      <tr>
+        <th scope="row">UOME</th>
+        <td>Julie</td>
+        <td>Outback</td>
+        <td>$30.00</td>
+        <td>05.07.2018</td>
+      </tr>
+      <tr>
+        <th scope="row">IOU</th>
+        <td>Jane</td>
+        <td>Golden Corral</td>
+        <td>-$25.00</td>
+        <td>01.02.18</td>
+      </tr>
+      <tr>
+        <th scope="row">IOU</th>
+        <td>John</td>
+        <td>Starbucks</td>
+        <td>-$10</td>
+        <td>03.05.18</td>
+      </tr>
+      <tr>
+        <th scope="row">OWED</th>
+        <td>Matt</td>
+        <td>Climax</td>
+        <td>$30.00</td>
+        <td>05.07.18</td>
+      </tr>
+      <tr>
+        <th scope="row">IOU</th>
+        <td>Amelia</td>
+        <td>Golden Corral</td>
+        <td>-$25.00</td>
+        <td>01.02.18</td>
+      </tr>
+      <tr>
+        <th scope="row">OWED</th>
+        <td>Amy</td>
+        <td>Starbucks</td>
+        <td>-$10</td>
+        <td>03.05.18</td>
+      </tr>
+      <tr>
+        <th scope="row">OWED</th>
+        <td>Chase</td>
+        <td>Climax</td>
+        <td>$30.00</td>
+        <td>05.07.18</td>
+      </tr>
+      <tr>
+        <th scope="row">IOU</th>
+        <td>Alex</td>
+        <td>EarthBound</td>
+        <td>$30.00</td>
+        <td>05.07.18</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
             
 @endsection
 
