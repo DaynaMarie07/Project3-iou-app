@@ -32,3 +32,6 @@ Route::get('/sendRequest', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/**post route for the database info */
+Route::post('/sendRequest', ['as' => 'sendRequest', 'uses' => 'BalanceController@save_data']);
