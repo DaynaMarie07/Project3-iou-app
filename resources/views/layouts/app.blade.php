@@ -12,7 +12,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <title>IOU</title>
+    <title>@yield('title')</title>
     <!-- put template styles here or in css file -->
         <!-- Whole site styles -->
     <!-- --------------------------------------- -->
@@ -28,9 +28,17 @@
                     <h4 class="text-white">Collapsed content</h4>
                     <span class="text-muted">Welcome to the best IOU app out there.</span>
                     <ul>
-                        <li>About</li>
-                        <li>Login</li>
-                        <li>Profile</li>
+                        @auth
+                            <li><a href="{{ route('profile') }}">Profile</a></li>
+                            <li>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                            </li>
+                        @else
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @endauth
                     </ul>
                 </div>
             </div>
@@ -38,8 +46,28 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <img src="../images/iou1" alt="" style="width:120px;height:60px;" >
+                <h1>@yield('pagetitle')</h1>
+                @auth
+                @else
+                <img src="../img/iou1.jpg" alt="" style="width:120px;height:60px;" >
+                @endauth
             </nav>
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
+                            <a href="{{ route('register') }}">Register</a>
+                        @endauth
+                    </div>
+                @endif
         </div> 
         @yield('header')
     </header>   

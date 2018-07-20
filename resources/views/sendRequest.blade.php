@@ -1,12 +1,31 @@
-@extends('layouts.contact')
-@section('pagestyles')
-<style>@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@extends('layouts.app')
 
-body {
-    padding: 0px 0px 60px;
- 
-}
-body:after {
+@section('title', 'Send and Request')
+
+@section('pagestyles')
+
+    <style> @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              -webkit-font-smoothing: antialiased;
+              -moz-font-smoothing: antialiased;
+              -o-font-smoothing: antialiased;
+              font-smoothing: antialiased;
+              text-rendering: optimizeLegibility;
+            }
+            
+            body {
+              font-family: "Roboto", Helvetica, Arial, sans-serif;
+              font-weight: 100;
+              font-size: 15px;
+              line-height: 30px;
+              color: #777;
+            }
+            body:after {
             content:"";
             position:fixed; /* stretch a fixed position to the whole screen */
             top:0;
@@ -20,218 +39,179 @@ body:after {
             -o-background-size: cover;
             background-size: cover;
             }
-.panel > .list-group .list-group-item:first-child {
-    /*border-top: 1px solid rgb(204, 204, 204);*/
-}
-@media (max-width: 767px) {
-    .visible-xs {
-        display: inline-block !important;
-    }
-    .block {
-        display: block !important;
-        width: 100%;
-        height: 1px !important;
-    }
-}
-#back-to-bootsnipp {
-    position: fixed;
-    top: 10px; right: 10px;
-}
+            
+            .container {
+              max-width: 400px;
+              width: 100%;
+              margin: 0 auto;
+              position: relative;
+             
+            }
+            
+            #contact input[type="text"],
+            #contact input[type="email"],
+            #contact input[type="tel"],
+            #contact input[type="url"],
+            #contact textarea,
+            #contact button[type="submit"] {
+              font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+            }
+            
+            #contact {
+              background: #FFF4EE;
+              padding: 25px;
+              margin: 100px 0;
+              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            }
+            
+            #contact h3 {
+              display: block;
+              font-size: 30px;
+              font-weight: 300;
+              margin-bottom: 10px;
+            }
+            
+            #contact h4 {
+              margin: 5px 0 15px;
+              display: block;
+              font-size: 13px;
+              font-weight: 400;
+            }
+            
+            fieldset {
+              border: medium none !important;
+              margin: 0 0 10px;
+              min-width: 100%;
+              padding: 0;
+              width: 100%;
+              
+            }
+            
+            #contact input[type="text"],
+            #contact input[type="email"],
+            #contact input[type="tel"],
+            #contact input[type="url"],
+            #contact textarea {
+              width: 100%;
+              border: 1px solid #ccc;
+              background: #FFF;
+              margin: 0 0 5px;
+              padding: 10px;
+              border-radius: 5px;
+            }
+            
+            #contact input[type="text"]:hover,
+            #contact input[type="email"]:hover,
+            #contact input[type="tel"]:hover,
+            #contact input[type="url"]:hover,
+            #contact textarea:hover {
+              -webkit-transition: border-color 0.3s ease-in-out;
+              -moz-transition: border-color 0.3s ease-in-out;
+              transition: border-color 0.3s ease-in-out;
+              border: 1px solid #aaa;
+            }
+            
+            #contact textarea {
+              height: 100px;
+              max-width: 100%;
+              resize: none;
+            }
+            
+            #contact button[type="submit"] {
+              cursor: pointer;
+              width: 100%;
+              border: none;
+              background:  #17a2b8;
+              color: #FFF;
+              margin: 0 0 5px;
+              padding: 10px;
+              font-size: 15px;
+            }
+            
+            #contact button[type="submit"]:hover {
+              background: #66CFCC;
+              -webkit-transition: background 0.3s ease-in-out;
+              -moz-transition: background 0.3s ease-in-out;
+              transition: background-color 0.3s ease-in-out;
+            }
+            
+            #contact button[type="submit"]:active {
+              box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+              background-color: #17a2b8;
+            }
+            
+            .copyright {
+              text-align: center;
+            }
+            
+            #contact input:focus,
+            #contact textarea:focus {
+              outline: 0;
+              border: 1px solid #aaa;
+            }
+            
+            ::-webkit-input-placeholder {
+              color: #888;
+            }
+            
+            :-moz-placeholder {
+              color: #888;
+            }
+            
+            ::-moz-placeholder {
+              color: #888;
+            }
+            
+            :-ms-input-placeholder {
+              color: #888;
+            }
+            .input{
+                width: 100%;
+                padding: 5px 10px;
+                font-size: 1.25em;
+                background-color:#E3FFFD;
+                color: #kkk;
 
-
-.c-search > .form-control {
-   border-radius: 0px;
-   border-width: 0px;
-   border-bottom-width: 1px;
-   font-size: 1.3em;
-   padding: 12px 12px;
-   height: 44px;
-   outline: none !important;
-}
-.c-search > .form-control:focus {
-    outline:0px !important;
-    -webkit-appearance:none;
-    box-shadow: none;
-}
-.c-search > .input-group-btn .btn {
-   border-radius: 0px;
-   border-width: 0px;
-   border-left-width: 1px;
-   border-bottom-width: 1px;
-   height: 44px;
-}
-
-
-.c-list {
-    padding: 0px;
-    min-height: 44px;
-}
-.title {
-    display: inline-block;
-    font-size: 1.7em;
-    font-weight: bold;
-    padding: 5px 15px;
-}
-ul.c-controls {
-    list-style: none;
-    margin: 0px;
-    min-height: 44px;
-}
-
-ul.c-controls li {
-    margin-top: 8px;
-    float: left;
-}
-
-ul.c-controls li a {
-    font-size: 1.7em;
-    padding: 11px 10px 6px;   
-}
-ul.c-controls li a i {
-    min-width: 24px;
-    text-align: center;
-}
-
-ul.c-controls li a:hover {
-    background-color: rgba(51, 51, 51, 0.2);
-}
-
-
-.name {
-    font-size: 1.7em;
-    font-weight: 700;
-}
-
-.c-info {
-    padding: 5px 10px;
-    font-size: 1.25em;
-}
-/* .img{
-    border-radius: 50%;
-     width:32px; 
-     height:32px; line-height:18px; 
-} */
-.input{
-    width: 100%;
-    padding: 5px 10px;
-    font-size: 1.25em;
-    background-color:#E3FFFD;
-    color: #kkk;
-
-}
-.form-inline{
-    width: 100%;
-}
-.custom-select{
-    border: 3px black;
-    background-color: #FFFFFF;
-}
-.btn-custom{
-    background-color: #8ABAFF;
-}
+            }
+            .form-inline{
+                width: 100%;
+            }
+            .custom-select{
+                border: 3px black;
+                background-color: #FFFFFF;
+            }
  
-.img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    
-}
-</style>
+           
+                    </style>
+
 @endsection
 @section('content')
-<body> 
-    <div class ="img"> 
 
-          <div class="col">
-              <img src="https://aicaonline.org/wp-content/uploads/2014/08/unknownMale-469x469.jpg" class="img" alt="unknown" width=20% >
-          </div>
-        </div>
-   
-    <form>
-       <div class = "input">
-            <div class="form-row-3">
-                <select class="form-control">
-                    <option>IOU</option>
-                    <option>UOME</option>
-                  </select>
-            </div>
-           
+    <div class="container">  
+        <form id="contact" action="" method="post">
+        <h3>Send and Request </h3>
+        <h4></h4>
+        <fieldset>
+            <input placeholder="Name or User Name" type="text" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Email Address" type="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Phone Number (optional)" type="tel" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+            <input placeholder="Amount" type="number" tabindex="4" required autofocus>
+        </fieldset>
+        <fieldset>
+            <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+        </fieldset>
+        <fieldset>
+            <button  type="submit" class="contact-submit" data-submit="...Sending">Send</button>
+        </fieldset> <fieldset>
+            <button  type="submit" class="contact-submit" data-submit="...Sending">Request</button>
+        </fieldset>
+        <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
         </form>
-  <!---bootstrap form !-->
-  <form class="form-inline ">
-
-  <label class="mr-sm-2" for="inlineFormCustomSelect">Favorites</label>
-  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-    <option selected>Choose user...</option>
-    <option value="1">Poe</option>
-    <option value="2">Atticus</option>
-    <option value="3">Shakespear</option>
-  </select>
-
-  <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-    <input type="checkbox" class="custom-control-input">
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Remember user</span>
-  </label>
-
-  <button type="submit" class="btn btn-custom">Submit</button>
-</form>
-<!--another BS form!-->
-<form class="form-inline">
-<div class="form-inlinerow">
-<div class="input[type=text]">
-  <label for="example-search-input" class="col-2 col-form-label">To:</label>
-  <div class="col-10">
-    <input class="form-control" type="search" placeholder="Jane Doe" id="example-search-input">
   </div>
-</div>
-
-<div class="form-inline row">
-  <label for="example-text-input" class="col-2 col-form-label">Comment</label>
-  <div class="col-10">
-      <br>
-      
-    <input class="form-control" type="text" placeholder="i owe you $20 for food" id="example-text-input">
-  </div>
-</div>
-</br>
-<div class="form-inline row">
-  <label for="example-email-input" class="col-2 col-form-label">Email</label>
-  <div class="col-10">
-  <br>
-    <input class="form-control" type="email" placeholder="janeDoe@example.com" id="example-email-input">
-  </div>
-</div>
-</br>
-<div class="form-inline row">
-  <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
-  <div class="col-10">
-  <br>
-    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input">
-  </div>
-</div>
-</br>
-<div class="form-inline row">
-  <label for="example-number-input" class="col-2 col-form-label">Amount</label>
-  <div class="col-10">
-  <br>
-    <input class="form-control" type="number" placeholder="$20.00" id="example-number-input">
-  </div>
-</div>
-</br>
-<div class="form-inline row">
-  <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
-  <div class="col-10">
-  <br>
-    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-  </div>
-</div>
-</div>
-</br>
-</form>
-
-
-        <!-- <script type="application/javascript" src="/public/assets/js/script.js"></script> -->
-  
- @endsection
+@endsection

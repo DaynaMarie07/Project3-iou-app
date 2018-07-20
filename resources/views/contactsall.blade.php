@@ -1,4 +1,7 @@
-@extends('layouts.contact')
+@extends('layouts.app')
+
+@section('title', 'Contacts')
+@section('pagetitle', '')
 
 @section('pagestyles')
 <style>@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
@@ -21,7 +24,7 @@ body:after {
             -o-background-size: cover;
             background-size: cover;
             }
-.panel > .list-group .list-group-item:first-child {
+.panel > .list-group .contact-container:first-child {
     /*border-top: 1px solid rgb(204, 204, 204);*/
 }
 @media (max-width: 767px) {
@@ -112,6 +115,12 @@ ul.c-controls li a:hover {
      width:32px; 
      height:32px; line-height:18px; 
 } */
+.contact-container{
+              background: #FFF4EE;
+              padding: 10px;
+              margin: 10px 0;
+              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+            }
 </style>
 @endsection
 @section('js')
@@ -161,10 +170,10 @@ $(function () {
 @endsection
 @section('content')
 
-<div class="container">
+
     <div class="row">
         <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-            <div class="panel panel-default">
+            <div class="contact-container">
                 <div class="panel-heading c-list">
                     <span class="title">Contacts</span>
                    
@@ -172,7 +181,7 @@ $(function () {
                 
                 <div class="row" style="display: none;">
                     <div class="col-xs-12">
-                        <div class="input-group c-search">
+                        <div class="contact-container">
                             <input type="text" class="form-control" id="contact-list-search">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search text-muted"></span></button>
@@ -182,7 +191,7 @@ $(function () {
                 </div>
                 
                 <ul class="list-group" id="contact-list">
-                    <li class="list-group-item">
+                    <li class="contact-container">
                         <!-- <div class ="img"> -->
                          <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
@@ -199,7 +208,7 @@ $(function () {
                         </div>
                         <div class="clearfix"></div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="contact-container">
                         <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/men/97.jpg" alt="Seth Frazier" class="img-responsive img-circle" />
                         </div>
@@ -214,7 +223,7 @@ $(function () {
                         </div>
                         <div class="clearfix"></div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="contact-container">
                         <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/women/90.jpg" alt="Jean Myers" class="img-responsive img-circle" />
                         </div>
@@ -229,7 +238,7 @@ $(function () {
                         </div>
                         <div class="clearfix"></div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="contact-container">
                         <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/men/24.jpg" alt="Todd Shelton" class="img-responsive img-circle" />
                         </div>
@@ -244,7 +253,7 @@ $(function () {
                         </div>
                         <div class="clearfix"></div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="contact-container">
                         <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/women/34.jpg" alt="Rosemary Porter" class="img-responsive img-circle" />
                         </div>
@@ -259,7 +268,7 @@ $(function () {
                         </div>
                         <div class="clearfix"></div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="contact-container">
                         <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/women/56.jpg" alt="Debbie Schmidt" class="img-responsive img-circle" />
                         </div>
@@ -274,7 +283,7 @@ $(function () {
                         </div>
                         <div class="clearfix"></div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="contact-container">
                         <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/women/76.jpg" alt="Glenda Patterson" class="img-responsive img-circle" />
                         </div>
@@ -309,7 +318,7 @@ $(function () {
             </div>
         </div>
     </div>
-    
+   
     <!-- JavaScrip Search Plugin -->
     <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>
     

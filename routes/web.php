@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,10 +10,13 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('index');
 });
 
+/*
 Route::get('/login', function () {
     return view('login');
 });
@@ -27,11 +29,6 @@ Route::get('/contacts', function () {
 Route::get('/sendRequest', function () {
     return view('sendRequest');
 });
-
-
-Auth::routes();
+*/
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-/**post route for the database info */
-Route::post('/sendRequest', ['as' => 'sendRequest', 'uses' => 'BalanceController@save_data']);

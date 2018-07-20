@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Register')
 
 @section('pagestyles')
 
@@ -47,7 +48,7 @@
             }
             
             #contact input[type="text"],
-            #contact input[type="email"],
+            #contact input[type="name"],
             #contact input[type="tel"],
             #contact input[type="url"],
             #contact textarea,
@@ -56,7 +57,7 @@
             }
             
             #contact {
-              background: #F6E5DC;
+              background: #FFF4EE;
               padding: 25px;
               margin: 150px 0;
               box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -86,7 +87,7 @@
             }
             
             #contact input[type="text"],
-            #contact input[type="email"],
+            #contact input[type="name"],
             #contact input[type="tel"],
             #contact input[type="url"],
             #contact textarea {
@@ -99,7 +100,7 @@
             }
             
             #contact input[type="text"]:hover,
-            #contact input[type="email"]:hover,
+            #contact input[type="name"]:hover,
             #contact input[type="tel"]:hover,
             #contact input[type="url"]:hover,
             #contact textarea:hover {
@@ -119,7 +120,7 @@
               cursor: pointer;
               width: 100%;
               border: none;
-              background: #268C8A;
+              background:  #17a2b8;
               color: #FFF;
               margin: 0 0 5px;
               padding: 10px;
@@ -167,16 +168,14 @@
                     </style>
 
 @endsection
-
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
+                <div id="container" class="card-body">
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf
 
@@ -232,7 +231,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-info">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>
@@ -244,4 +243,46 @@
     </div>
 </div>
 
+<!-- 
+    <div id="contact" class="container">  
+        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+          @csrf
+
+        <h3>Register </h3>
+        <h4>Sign up, to begin saving money!</h4>
+
+        <fieldset>
+            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+        </fieldset>
+         <fieldset>
+            <input id="name" type="name" placeholder="Your User Name" 
+              class="" 
+              name="name" value="{{ old('name') }}" 
+              required autofocus>
+          </fieldset>
+          <fieldset>
+            <input id="email" type="email" placeholder="Your Email" 
+              class="" 
+              name="email" value="{{ old('email') }}" 
+              required autofocus>
+          </fieldset>
+          <fieldset>
+            <input id="password" type="password" placeholder="Your password" 
+              class="" 
+              password="password" value="{{ old('password') }}" 
+              required autofocus>
+          </fieldset>
+          <fieldset>
+            <input id="password-confirm" type="password" placeholder="confirm password" 
+              class="" 
+              name="confirm password" value="{{ old('confirm password') }}" 
+              required autofocus>
+          </fieldset>confirm password
+        <fieldset>
+            <button  type="submit" id="contact-submit" data-submit="...Sending">Register</button>
+        </fieldset>
+        <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
+        </form>
+  </div>
+-->
 @endsection

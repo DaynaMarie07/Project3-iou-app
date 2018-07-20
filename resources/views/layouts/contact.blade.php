@@ -12,7 +12,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <title>Contact</title>
+    <title>Contact Profile</title>
     <!-- put template styles here or in css file -->
         <!-- Whole site styles -->
     <!-- --------------------------------------- -->
@@ -38,7 +38,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <img src="./img/iou1.jpg" alt="" style="width:120px;height:60px;" >
+                <img src="../img/iou1.jpg" alt="" style="width:120px;height:60px;" >
             </nav>
         </div> 
         @yield('header')
