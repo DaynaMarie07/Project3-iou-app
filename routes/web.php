@@ -12,10 +12,6 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('index');
-});
-
 /*
 Route::get('/login', function () {
     return view('login');
@@ -31,6 +27,11 @@ Route::get('/sendRequest', function () {
 });
 */
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'HomeController@index')->name('profile');
+    Route::get('/profile', 'HomeController@index')->name('profile');
+    Route::get('/contact', 'HomeController@index')->name('contact');
+    Route::get('/contactsall', 'HomeController@index')->name('contactsall');
+});

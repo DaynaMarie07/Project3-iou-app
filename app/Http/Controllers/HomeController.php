@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Iou;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(\Auth::check()) 
+        {
+            $user = \Auth::user();
+            $userEmail = $user->email;
+        }
+        $ious = \App\Iou
+            ::where('lender_email', $userEmail)
+            ->orWhere('borrower_email', $userEmail)
+            ->where('paid', false)
+            ->orderBy('date', 'desc')
+            ->take(10)
+            ->get();
+
+        return view('index')->with('ious', $ious);
     }
 }
