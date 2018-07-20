@@ -32,5 +32,3 @@ Route::get('/sendRequest', function () {
 */
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/profile', 'HomeController@index')->name('profile');
