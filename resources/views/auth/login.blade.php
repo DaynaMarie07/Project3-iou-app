@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Login')
 
 @section('pagestyles')
 
@@ -170,28 +171,48 @@
 
 @section('content')
 
-    <div class="container">  
-        <form id="contact" action="" method="post">
-        <h3>I Owe You </h3>
-        <h4>Sign up, to begin saving money!</h4>
-        <fieldset>
-            <input placeholder="Your User Name" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your Email Address" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
-        </fieldset>
-       
-        <fieldset>
-            <button  type="submit" id="contact-submit" data-submit="...Sending">Welcome, back!</button>
-        </fieldset>
+    <div id="contact" class="container">  
+        <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+          @csrf
 
-        <fieldset>
-            <button  type="submit" id="contact-submit" data-submit="...Sending">Not a member? Sign up for free now!</button>
-        </fieldset>
-        <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
+          <h3>I Owe You </h3>
+          <h4>Sign up, to begin saving money!</h4>
+
+          <fieldset>
+            <input id="email" type="email" placeholder="Your User Name" 
+              class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
+              name="email" value="{{ old('email') }}" 
+              required autofocus>
+
+            @if ($errors->has('email'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('email') }}</strong>
+                </span>
+            @endif
+          </fieldset>
+
+          <fieldset>
+            <input id="password" type="password" placeholder="Your Passsword" 
+              class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
+              name="password" value="{{ old('password') }}" 
+              required autofocus>
+
+            @if ($errors->has('password'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+          </fieldset>
+       
+          <fieldset>
+              <button  type="submit" id="contact-submit" data-submit="...Sending">Welcome, back!</button>
+          </fieldset>
+        </form>
+        <form method="get" action="{{ route('register') }}"
+          <fieldset>
+              <button  type="submit" id="contact-submit" data-submit="...Sending">Not a member? Sign up for free now!</button>
+          </fieldset>
+          <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
         </form>
   </div>
 @endsection

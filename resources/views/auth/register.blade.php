@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Register')
 
 @section('pagestyles')
 
@@ -47,7 +48,7 @@
             }
             
             #contact input[type="text"],
-            #contact input[type="email"],
+            #contact input[type="name"],
             #contact input[type="tel"],
             #contact input[type="url"],
             #contact textarea,
@@ -86,7 +87,7 @@
             }
             
             #contact input[type="text"],
-            #contact input[type="email"],
+            #contact input[type="name"],
             #contact input[type="tel"],
             #contact input[type="url"],
             #contact textarea {
@@ -99,7 +100,7 @@
             }
             
             #contact input[type="text"]:hover,
-            #contact input[type="email"]:hover,
+            #contact input[type="name"]:hover,
             #contact input[type="tel"]:hover,
             #contact input[type="url"]:hover,
             #contact textarea:hover {
@@ -168,28 +169,120 @@
 
 @endsection
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
 
-    <div class="container">  
-        <form id="contact" action="" method="post">
+                <div id="container" class="card-body">
+                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+    <div id="contact" class="container">  
+        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+          @csrf
+
         <h3>Register </h3>
         <h4>Sign up, to begin saving money!</h4>
+
         <fieldset>
             <input placeholder="Your name" type="text" tabindex="1" required autofocus>
         </fieldset>
+         <fieldset>
+            <input id="name" type="name" placeholder="Your User Name" 
+              class="" 
+              name="name" value="{{ old('name') }}" 
+              required autofocus>
+          </fieldset>
+          <fieldset>
+            <input id="email" type="email" placeholder="Your Email" 
+              class="" 
+              name="email" value="{{ old('email') }}" 
+              required autofocus>
+          </fieldset>
+          <fieldset>
+            <input id="password" type="password" placeholder="Your password" 
+              class="" 
+              password="password" value="{{ old('password') }}" 
+              required autofocus>
+          </fieldset>
+          <fieldset>
+            <input id="password-confirm" type="password" placeholder="confirm password" 
+              class="" 
+              name="confirm password" value="{{ old('confirm password') }}" 
+              required autofocus>
+          </fieldset>confirm password
         <fieldset>
-            <input placeholder="Your Email Address" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
-        </fieldset>
-       
-        <fieldset>
-            <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
-        </fieldset>
-        <fieldset>
-            <button  type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            <button  type="submit" id="contact-submit" data-submit="...Sending">Register</button>
         </fieldset>
         <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
         </form>
   </div>
+-->
 @endsection

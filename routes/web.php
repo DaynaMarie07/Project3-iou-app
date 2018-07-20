@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,10 +10,13 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('index');
 });
 
+/*
 Route::get('/login', function () {
     return view('login');
 });
@@ -27,12 +29,8 @@ Route::get('/contacts', function () {
 Route::get('/sendRequest', function () {
     return view('sendRequest');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-
-
-
-Auth::routes();
+*/
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', 'HomeController@index')->name('profile');

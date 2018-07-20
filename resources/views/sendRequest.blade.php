@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Send and Request')
+
 @section('pagestyles')
 
     <style> @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
