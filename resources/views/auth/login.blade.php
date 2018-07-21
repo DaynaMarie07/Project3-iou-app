@@ -205,7 +205,7 @@
           </fieldset>
        
           <fieldset>
-              <button  type="submit" id="contact-submit" data-submit="...Sending">Welcome, back!</button>
+              <button  type="submit" id="contact-submit" data-submit="...Sending">Login</button>
           </fieldset>
         </form>
         <form method="get" action="{{ route('register') }}"
