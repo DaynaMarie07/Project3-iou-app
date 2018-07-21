@@ -83,8 +83,16 @@
   <div id="wrapper">
     <div class="scroll">
       <div class="d-flex justify-content-center">
-        <button type="button" class="my-custom-btn active" role="button" aria-pressed="true"> {{ __('Send') }}</button>
-        <button type="button" class="my-custom-btn active" role="button" aria-pressed="true"> {{ __('Request') }}</button>
+        <form method='GET' action='{{ route('sendIOU') }}'>
+          <button type="submit" class="my-custom-btn active" role="button" aria-pressed="true"> 
+            {{ __('Send') }}
+          </button>
+        </form>
+        <form method='GET' action='{{ route('recieveUOME') }}'>
+          <button type="submit" class="my-custom-btn active" role="button" aria-pressed="true"> 
+            {{ __('Request') }}
+          </button>
+        </form>
         <button type="button" class="my-custom-btn active" role="button" aria-pressed="true" > {{ __('Contact') }}</button>
       </div>
     </div>
@@ -100,76 +108,28 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">IOU</th>
-        <td>Amy</td>
-        <td>Olive Garden</td>
-        <td>-$25.00</td>
-        <td>01.02.2018</td>
+      @foreach($ious as $iou)
+        <tr>
+          @if($iou->borrower_email==$userEmail)
+            @if($iou->lender_email==$userEmail)
+              <!-- IOU case -->
+              <th scope="text-danger row">IOME</th>
+              <td class='text-danger'>I owe me!!</td>
+            @else
+              <!-- IOU case -->
+              <th scope="row">IOU</th>
+              <td>{{$iou->lender_email}}</td>
+            @endif
+          @else
+            <!-- UOME case -->
+            <th scope="row">UOME</th>
+            <td>{{$iou->borrower_email}}</td>
+        @endif
+            <td>{{$iou->comment}}</td>
+            <td>{{$iou->amount}}</td>
+            <td>{{$iou->due_date}}</td>
       </tr>
-      <tr>
-        <th scope="row">IOU</th>
-        <td>Kaitlyn</td>
-        <td>Starbucks</td>
-        <td>-$10</td>
-        <td>03.05.2018</td>
-      </tr>
-      <tr>
-        <th scope="row">UOME</th>
-        <td>Julie</td>
-        <td>Outback</td>
-        <td>$30.00</td>
-        <td>05.07.2018</td>
-      </tr>
-      <tr>
-        <th scope="row">IOU</th>
-        <td>Jane</td>
-        <td>Golden Corral</td>
-        <td>-$25.00</td>
-        <td>01.02.18</td>
-      </tr>
-      <tr>
-        <th scope="row">IOU</th>
-        <td>John</td>
-        <td>Starbucks</td>
-        <td>-$10</td>
-        <td>03.05.18</td>
-      </tr>
-      <tr>
-        <th scope="row">OWED</th>
-        <td>Matt</td>
-        <td>Climax</td>
-        <td>$30.00</td>
-        <td>05.07.18</td>
-      </tr>
-      <tr>
-        <th scope="row">IOU</th>
-        <td>Amelia</td>
-        <td>Golden Corral</td>
-        <td>-$25.00</td>
-        <td>01.02.18</td>
-      </tr>
-      <tr>
-        <th scope="row">OWED</th>
-        <td>Amy</td>
-        <td>Starbucks</td>
-        <td>-$10</td>
-        <td>03.05.18</td>
-      </tr>
-      <tr>
-        <th scope="row">OWED</th>
-        <td>Chase</td>
-        <td>Climax</td>
-        <td>$30.00</td>
-        <td>05.07.18</td>
-      </tr>
-      <tr>
-        <th scope="row">IOU</th>
-        <td>Alex</td>
-        <td>EarthBound</td>
-        <td>$30.00</td>
-        <td>05.07.18</td>
-      </tr>
+      @endforeach
     </tbody>
   </table>
 </div>

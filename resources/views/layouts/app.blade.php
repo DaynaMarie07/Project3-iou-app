@@ -30,16 +30,27 @@
                     <ul>
                         @auth
                             <li><a href="{{ route('profile') }}">Profile</a></li>
-                            <li>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-                            </li>
+                           
                         @else
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @endauth
-                    </ul>
+                        @if (Route::has('login'))
+                    @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        
+                        @endauth
+                    </div>
+                @endif
+                @endif
                 </div>
             </div>
             <nav class="navbar navbar-dark bg-dark">
@@ -52,22 +63,7 @@
                 <img src="../img/iou1.jpg" alt="" style="width:120px;height:60px;" >
                 @endauth
             </nav>
-                @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-                            <a href="{{ route('register') }}">Register</a>
-                        @endauth
-                    </div>
-                @endif
+           
         </div> 
         @yield('header')
     </header>   

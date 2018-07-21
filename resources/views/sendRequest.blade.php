@@ -188,29 +188,36 @@
 @section('content')
 
     <div class="container">  
-        <form id="contact" action="" method="post">
-        <h3>Send and Request </h3>
+        <form id="contact" action="{{ $iouCreateAction }}" method="post">
+        @csrf
+        <h3>
+            @if($type=='IOU')
+              Send
+            @else
+              Recieve
+            @endif
+        </h3>
         <h4></h4>
+        
         <fieldset>
-            <input placeholder="Name or User Name" type="text" tabindex="1" required autofocus>
+            <input placeholder="Email Address"  name="email" type="email" tabindex="2" required>
+        </fieldset>
+      
+        <fieldset>
+            <input placeholder="Amount"  name="amount" type="number" tabindex="4" required autofocus>
         </fieldset>
         <fieldset>
-            <input placeholder="Email Address" type="email" tabindex="2" required>
+            <textarea placeholder="Type your message here...."  name="comment" tabindex="5" required></textarea>
         </fieldset>
         <fieldset>
-            <input placeholder="Phone Number (optional)" type="tel" tabindex="3" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Amount" type="number" tabindex="4" required autofocus>
-        </fieldset>
-        <fieldset>
-            <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
-        </fieldset>
-        <fieldset>
-            <button  type="submit" class="contact-submit" data-submit="...Sending">Send</button>
-        </fieldset> <fieldset>
-            <button  type="submit" class="contact-submit" data-submit="...Sending">Request</button>
-        </fieldset>
+            <button  type="submit" class="contact-submit" data-submit="...Sending">
+              @if($type=='IOU')
+                Send
+              @else
+                Recieve
+              @endif
+            </button>
+        </fieldset> 
         <p class="copyright">Created by <a href="https://colorlib.com" target="_blank" title="Colorlib">Dayna Payne</a></p>
         </form>
   </div>

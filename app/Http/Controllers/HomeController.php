@@ -28,16 +28,21 @@ class HomeController extends Controller
         if(\Auth::check()) 
         {
             $user = \Auth::user();
-            $userEmail = $user->email;
+            $userEmail = \Auth::user()->email;
         }
-        $ious = \App\Iou
-            ::where('lender_email', $userEmail)
-            ->orWhere('borrower_email', $userEmail)
-            ->where('paid', false)
-            ->orderBy('date', 'desc')
+        $ious = \App\Iou::where('paid', false) 
+            ->where(function($query) {
+                $userEmail = \Auth::user()->email;
+                $query
+                    ->where('lender_email', $userEmail)
+                    ->orWhere('borrower_email', $userEmail);
+            })
+            ->orderBy('due_date', 'asc')
             ->take(10)
             ->get();
 
-        return view('index')->with('ious', $ious);
+        return view('index')
+                ->with('ious', $ious)
+                ->with('userEmail', $userEmail);
     }
 }

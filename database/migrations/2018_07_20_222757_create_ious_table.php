@@ -22,7 +22,7 @@ class CreateIousTable extends Migration
             $table->date('created_date');
             $table->date('due_date');
             $table->boolean('paid');
-            $table->date('paid_on_date');
+            $table->date('paid_on_date')->nullable(true);
             $table->timestamps();
         });
     }
