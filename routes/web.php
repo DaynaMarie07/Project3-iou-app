@@ -27,17 +27,21 @@ Route::get('/sendRequest', function () {
 });
 */
 
-Route::group(['middleware' => ['auth']], function() {
-    Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/home', 'HomeController@index')->name('home');
+// <<<<<<< project2iou
+// Route::group(['middleware' => ['auth']], function() {
+//     Route::get('/', 'HomeController@index')->name('home');
+//     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/sendIOU', 'IOUController@showCreateIOU')->name('sendIOU');
-    Route::get('/recieveUOME', 'IOUController@showCreateUOME')->name('recieveUOME');
+//     Route::get('/sendIOU', 'IOUController@showCreateIOU')->name('sendIOU');
+//     Route::get('/recieveUOME', 'IOUController@showCreateUOME')->name('recieveUOME');
 
-    Route::post('/createIOU',  'IOUController@createIOU')->name('createIOU');
-    Route::post('/createUOME', 'IOUController@createUOME')->name('createUOME');
+//     Route::post('/createIOU',  'IOUController@createIOU')->name('createIOU');
+//     Route::post('/createUOME', 'IOUController@createUOME')->name('createUOME');
 
-    Route::get('/profile', 'HomeController@index')->name('profile');
-    Route::get('/contact', 'HomeController@index')->name('contact');
-    Route::get('/contactsall', 'HomeController@index')->name('contactsall');
-});
+//     Route::get('/profile', 'HomeController@index')->name('profile');
+//     Route::get('/contact', 'HomeController@index')->name('contact');
+//     Route::get('/contactsall', 'HomeController@index')->name('contactsall');
+// });
+// =======
+// Route::get('/home', 'HomeController@index')->name('home');
+// >>>>>>> master
